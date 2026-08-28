@@ -16,6 +16,7 @@ This is a **C language-based OpenGL/GLUT project**, where an animated aquarium i
 ->Section 1: GLUT Installation & Connect to Codeblocks
 
 ->Section 2:  Explained in Simple Language what to do in my project
+
 ->Section 3: What Functions are Used in my project code
 
 ---
