@@ -1,17 +1,17 @@
-#Interactive Aquarium Project (OpenGL + GLUT)
+# Interactive Aquarium Project (OpenGL + GLUT)
 
 This is a **C language-based OpenGL/GLUT project**, where an animated aquarium is shown — fish are swimming, bubbles are moving upward, plants are there, sand is at the bottom, and pressing the `D` button on the keyboard changes the aquarium between **Day/Night mode**.
 
 ---
 
-#Screen Recording
+# Screen Recording
 
-##**Project Demo Video:**
+##**Project Demo Video**
 [Click here to watch the screen recording](https://drive.google.com/file/d/1Q99jwjwwa3GG4REDq_j_3QNtgkhoOq5_/view?usp=sharing)
 
 ---
 
-#Table of Contents**
+# Table of Contents
 
 ->Section 1: GLUT Installation & Connect to Codeblocks
 
@@ -21,7 +21,7 @@ This is a **C language-based OpenGL/GLUT project**, where an animated aquarium i
 
 ---
 
-#Section 1: GLUT Installation & Connect to Codeblocks
+# Section 1: GLUT Installation & Connect to Codeblocks
 
 ##Journey — How I Started:
 
@@ -89,7 +89,7 @@ This setup allowed me to use GLUT functions for creating the OpenGL window, hand
 
 ---
 
-#Section 2: Detailed in the Code What i doing in my project 
+# Section 2: Detailed in the Code What i doing in my project 
  
  ### First, What Does This Program Do?
 This program creates an **Interactive Aquarium** using OpenGL and GLUT. It shows a simple underwater scene where **two fish swim across the aquarium, two bubbles move upward, four underwater plants are displayed, and sand is placed at the bottom**. The aquarium has a blue water background, and the user can press **D/d** to switch between **Day and Night mode**. Pressing the **ESC key** closes the program. The title **“MY AQUARIUM”** is also displayed at the top of the screen. The easiest way to understand the program is: **first it draws everything, then it moves the fish and bubbles, then it draws the scene again, and this process keeps repeating**. This repeated process creates the animation and makes the aquarium look alive and interactive.
@@ -97,7 +97,7 @@ I show the whole process in one line: Draw everything → Move the fish and bubb
 
 ---
 
-##1. Header Files
+## 1. Header Files
 
 ```
 #include <GL/glut.h>
@@ -105,14 +105,18 @@ I show the whole process in one line: Draw everything → Move the fish and bubb
 #include <math.h>
 ```
 
-### `#include <GL/glut.h>` This is the main graphics toolbox. It gives us functions from **OpenGL and GLUT**. We use it for things like: Creating the window, Drawing shapes, Choosing colors, Taking keyboard input, Running animation, Displaying text.
+### `#include <GL/glut.h>` 
+This is the main graphics toolbox. It gives us functions from **OpenGL and GLUT**. We use it for things like: Creating the window, Drawing shapes, Choosing colors, Taking keyboard input, Running animation, Displaying text.
 
-### `#include <stdlib.h>` This is a general-purpose C library. In our program, it is mainly used for: exit(0); 
+### `#include <stdlib.h>`
+This is a general-purpose C library. In our program, it is mainly used for: exit(0); 
 This command closes the program.
 
-### `#include <math.h>` This library gives us mathematical functions. We use: Sin(),Cos()
+### `#include <math.h>`
+This library gives us mathematical functions. We use: Sin(),Cos()
 
- ###`drawCircle()` These mathematical functions help us calculate the points needed to make a circle. So: `math.h`→ helps us calculate the circle.
+ ###`drawCircle()` 
+ These mathematical functions help us calculate the points needed to make a circle. So: `math.h`→ helps us calculate the circle.
 
 ---
 
@@ -207,55 +211,78 @@ It keeps the program running and allows drawing, animation, and keyboard input t
 
 # Section 3: Functions Used
 
-###`glutInit(&argc, argv)` is used to initialize the GLUT library. It is called at the beginning of the program to start the graphics and window system.
+###`glutInit(&argc, argv)` 
+is used to initialize the GLUT library. It is called at the beginning of the program to start the graphics and window system.
 
-###`glutInitDisplayMode()` is used to set the display mode of the program. In this project, `GLUT_DOUBLE` is used for double buffering to make the animation smooth, and `GLUT_RGB` is used for color display.
+###`glutInitDisplayMode()` 
+is used to set the display mode of the program. In this project, `GLUT_DOUBLE` is used for double buffering to make the animation smooth, and `GLUT_RGB` is used for color display.
 
-###`glutInitWindowSize(800,600)` is used to set the size of the window. In this project, it creates an 800×600 pixel window for the aquarium.
+###`glutInitWindowSize(800,600)` 
+is used to set the size of the window. In this project, it creates an 800×600 pixel window for the aquarium.
 
-###`glutInitWindowPosition(100,100)` is used to set the initial position of the window on the screen. It helps the aquarium window open at a specific location.
+###`glutInitWindowPosition(100,100)`
+is used to set the initial position of the window on the screen. It helps the aquarium window open at a specific location.
 
-###`glutCreateWindow("...")` is used to create the main application window with a title. In this project, it is used to create the **"Interactive Aquarium"** window.
+###`glutCreateWindow("...")` 
+is used to create the main application window with a title. In this project, it is used to create the **"Interactive Aquarium"** window.
 
-###`glutDisplayFunc(display)` is used to register the `display()` function with GLUT. This function is responsible for drawing the aquarium objects on the screen whenever the screen needs to be refreshed.
+###`glutDisplayFunc(display)`
+is used to register the `display()` function with GLUT. This function is responsible for drawing the aquarium objects on the screen whenever the screen needs to be refreshed.
 
-###`glutKeyboardFunc(keyboard)` is used to handle keyboard input. In this project, it is used so that pressing `D` changes the Day/Night mode and pressing `ESC` closes the program.
+###`glutKeyboardFunc(keyboard)` 
+is used to handle keyboard input. In this project, it is used so that pressing `D` changes the Day/Night mode and pressing `ESC` closes the program.
 
-###`glutTimerFunc(30, update, 0)` is used to call the `update()` function after a specific amount of time. In this project, it is called every 30 milliseconds to create animation by moving the fish and bubbles.
+###`glutTimerFunc(30, update, 0)` 
+is used to call the `update()` function after a specific amount of time. In this project, it is called every 30 milliseconds to create animation by moving the fish and bubbles.
 
-###`glutMainLoop()` keeps the program running continuously. It handles different events such as keyboard input, screen refresh, and animation until the user exits the program.
+###`glutMainLoop()`
+keeps the program running continuously. It handles different events such as keyboard input, screen refresh, and animation until the user exits the program.
 
-###`glutPostRedisplay()` tells GLUT to redraw the screen. It is used to update the aquarium according to the new positions of the fish and bubbles.
+###`glutPostRedisplay()`
+tells GLUT to redraw the screen. It is used to update the aquarium according to the new positions of the fish and bubbles.
 
-###`glutSwapBuffers()` swaps the front and back buffers. Since double buffering is used in this project, this function helps display the newly drawn frame smoothly without flickering.
+###`glutSwapBuffers()`
+swaps the front and back buffers. Since double buffering is used in this project, this function helps display the newly drawn frame smoothly without flickering.
 
-###`glutBitmapCharacter()` is used to draw individual characters on the screen. In this project, it is used to display the **"MY AQUARIUM"** text.
+###`glutBitmapCharacter()` 
+is used to draw individual characters on the screen. In this project, it is used to display the **"MY AQUARIUM"** text.
 
-###`glClear(GL_COLOR_BUFFER_BIT)` is used to clear the previously drawn frame from the color buffer. It is called before drawing a new frame so that the old image does not remain on the screen.
+###`glClear(GL_COLOR_BUFFER_BIT)`
+is used to clear the previously drawn frame from the color buffer. It is called before drawing a new frame so that the old image does not remain on the screen.
 
-###`glClearColor()` is used to set the background color of the window. It determines which color will appear when the color buffer is cleared.
+###`glClearColor()`
+is used to set the background color of the window. It determines which color will appear when the color buffer is cleared.
 
-###`glColor3f(r,g,b)` is used to set the color of the objects that will be drawn. In this project, it is used to give different colors to the fish, water, sand, plants, bubbles, and other aquarium objects.
+###`glColor3f(r,g,b)`
+is used to set the color of the objects that will be drawn. In this project, it is used to give different colors to the fish, water, sand, plants, bubbles, and other aquarium objects.
 
-###`glBegin()` and `glEnd()` are used to define the beginning and ending of a shape. In this project, they are used with different OpenGL drawing modes such as `GL_TRIANGLE_FAN`, `GL_TRIANGLES`, `GL_QUADS`, and `GL_LINES`.
+###`glBegin()` and `glEnd()` 
+are used to define the beginning and ending of a shape. In this project, they are used with different OpenGL drawing modes such as `GL_TRIANGLE_FAN`, `GL_TRIANGLES`, `GL_QUADS`, and `GL_LINES`.
 
-###`glVertex2f(x,y)` is used to specify the position of a vertex using x and y coordinates. It is used to define the points and corners of different shapes such as triangles, quadrilaterals, circles, and lines.
+###`glVertex2f(x,y)`
+is used to specify the position of a vertex using x and y coordinates. It is used to define the points and corners of different shapes such as triangles, quadrilaterals, circles, and lines.
 
-###`glLineWidth(5)` is used to set the thickness of lines. In this project, it is mainly used to make the aquarium plants and their leaves look thicker.
+###`glLineWidth(5)`
+is used to set the thickness of lines. In this project, it is mainly used to make the aquarium plants and their leaves look thicker.
 
-###`glMatrixMode(GL_PROJECTION)` is used to select the projection matrix. It is needed when setting up the 2D coordinate system for the aquarium.
+###`glMatrixMode(GL_PROJECTION)`
+is used to select the projection matrix. It is needed when setting up the 2D coordinate system for the aquarium.
 
-###`glLoadIdentity()` is used to reset the current transformation matrix to its default state. It ensures that any previous transformations do not affect the new coordinate system.
+###`glLoadIdentity()`
+is used to reset the current transformation matrix to its default state. It ensures that any previous transformations do not affect the new coordinate system.
 
-###`gluOrtho2D(-1,1,-1,1)` is used to create a 2D orthographic coordinate system. In this project, it maps the aquarium screen area between `-1` and `1` on both the x-axis and y-axis.
+###`gluOrtho2D(-1,1,-1,1)`
+is used to create a 2D orthographic coordinate system. In this project, it maps the aquarium screen area between `-1` and `1` on both the x-axis and y-axis.
 
-###`exit(0)` is used to terminate the program completely. In this project, it is used when the user presses the `ESC` key to close the aquarium.
+###`exit(0)` 
+is used to terminate the program completely. In this project, it is used when the user presses the `ESC` key to close the aquarium.
 
-###`cos()` and `sin()` from `math.h` are mathematical functions used to calculate x and y coordinates from an angle. In this project, they are mainly used to calculate the points needed to draw circular objects such as bubbles.
+###`cos()` and `sin()` from `math.h` 
+are mathematical functions used to calculate x and y coordinates from an angle. In this project, they are mainly used to calculate the points needed to draw circular objects such as bubbles.
 
 ---
 
-#Conclusion
+# Conclusion
 
 This project successfully demonstrates a simple **Interactive Aquarium** using OpenGL and GLUT. The program creates an underwater environment with animated fish, bubbles, aquatic plants, sand, and an aquarium title. The fish and bubbles move continuously to create a simple animation effect. It also includes a **Day/Night mode**, which can be switched using the `D` key, and the `ESC` key can be used to exit the program.
 
