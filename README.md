@@ -1,25 +1,26 @@
-#**🐠 Interactive Aquarium Project (OpenGL + GLUT)**
+#🐠 Interactive Aquarium Project (OpenGL + GLUT)
 
 This is a **C language-based OpenGL/GLUT project**, where an animated aquarium is shown — fish are swimming, bubbles are moving upward, plants are there, sand is at the bottom, and pressing the `D` button on the keyboard changes the aquarium between **Day/Night mode**.
 
 ---
 
-#**Screen Recording**
+#Screen Recording
 
 ##🎥 **Project Demo Video:**
 [Click here to watch the screen recording](https://drive.google.com/file/d/1Q99jwjwwa3GG4REDq_j_3QNtgkhoOq5_/view?usp=sharing)
 
 ---
 
-#**📚 Table of Contents**
+#📚 Table of Contents**
 
 ->Section 1: GLUT Installation & Complete Code
+
 ->Section 2:  Explained in Simple Language what to do in my project
 ->Section 3: Functions Used in my project code
 
 ---
 
-# Section 1: GLUT Installation & Complete Code
+#Section 1: GLUT Installation & Complete Code
 
 ##🧭Journey — How I Started:
 
@@ -87,4 +88,4 @@ So, my overall process was:
 This setup allowed me to use GLUT functions for creating the OpenGL window, handling user input, and controlling the program's display and animation. Then i checked a simple code like : a four-colored square will continuously rotate and scale up and down.Then i applied my project idea .Finally, i confirmed this set up ready to GLUT project.
 
 ---
-
+#
